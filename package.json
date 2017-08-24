@@ -1,0 +1,33 @@
+{
+  "name": "parity-e2e-tests",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "standard && flow",
+    "flow": "flow"
+  },
+  "author": "",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "standard": "^10.0.3",
+    "testcafe": "^0.17.1",
+    "testcafe-react-selectors": "0.0.7"
+  },
+  "standard": {
+    "parser": "babel-eslint",
+    "ignore": [
+      "/flow-typed/"
+    ],
+    "globals": [
+      "test",
+      "fixture",
+      "TestController"
+    ]
+  },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "flow-bin": "^0.53.1"
+  }
+}

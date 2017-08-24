@@ -1,0 +1,12 @@
+[parity]
+chain = "dev"
+base_path = "/tmp"
+
+[ui]
+path = "./res"
+
+[websockets]
+origins = ["all"]
+
+[misc]
+ports_shift = 100
