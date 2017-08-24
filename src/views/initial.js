@@ -2,7 +2,7 @@
 
 import { Selector } from 'testcafe'
 
-export default class InitialScreens {
+export class InitialScreens {
   token = 'aaBB-ccDD-eeFF-ggHH'
   signerInput = Selector('div[class^=connection__form] input', {
     visibilityCheck: true
@@ -55,3 +55,4 @@ export default class InitialScreens {
     await this.dismissTutorial(t)
   }
 }
+export default new InitialScreens()

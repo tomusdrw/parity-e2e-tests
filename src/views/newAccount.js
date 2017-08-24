@@ -5,7 +5,7 @@ import { Selector } from 'testcafe'
 const formInputs = Selector('form input')
 const createAccountInputs = Selector('[class^=createAccount__description] input')
 
-export default class NewAccount {
+export class NewAccount {
   accountNameInput = formInputs.nth(2)
   passwordHintInput = formInputs.nth(3)
   passwordInput = formInputs.nth(4)
@@ -15,3 +15,4 @@ export default class NewAccount {
   phraseConfirmation = createAccountInputs.nth(2)
   confirmRecoveryPhrase = createAccountInputs.nth(1)
 }
+export default new NewAccount()

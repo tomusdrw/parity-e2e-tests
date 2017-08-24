@@ -8,5 +8,5 @@ const getWindowLocation = ClientFunction(() => window.location.toString())
 
 export async function expectUrl (t: TestController, expected: string) {
   const location = await getWindowLocation()
-  await t.expect(location).eql(expected)
+  await t.expect(location).eql(`${URL}${expected}`)
 }

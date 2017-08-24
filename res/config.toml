@@ -3,7 +3,7 @@ chain = "dev"
 base_path = "/tmp"
 
 [ui]
-path = "./res"
+path = "./generated"
 
 [websockets]
 origins = ["all"]
