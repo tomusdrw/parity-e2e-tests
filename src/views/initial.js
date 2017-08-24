@@ -9,9 +9,10 @@ export default class InitialScreens {
   })
 
   syncWarningButton = Selector('[class^=syncWarning__button] button')
-  tncNext = Selector('[class^=portal__buttonRow] button')
-  tncSkip = Selector('[class^=portal__buttonRow] button:first-child')
+  tncNext = Selector('[class^=portal__buttonRow] button:not(:disabled)')
   tncCheckbox = Selector('[class^=firstRun__accept] input')
+  newAccountSkip = Selector('[class^=portal__buttonRow] button:first-child')
+  newAccountNext = Selector('[class^=portal__buttonRow] button:nth-child(2):not(:disabled)')
 
   webExtensionClose = Selector('[class^=extension__body] svg')
   tutorialClose = Selector('[class^=tooltips__buttons] button')
@@ -34,13 +35,17 @@ export default class InitialScreens {
     await t.click(this.tutorialClose)
   }
 
-  async acceptTnc (t: TestController) {
+  async acceptTnc (t: TestController, skipAccountCreation: bool = true) {
     await t
       .click(this.tncNext)
       .click(this.tncCheckbox)
+      .expect(this.tncCheckbox.checked).ok()
       .click(this.tncNext)
-      .click(this.tncSkip)
-      .click(this.tncNext)
+    if (skipAccountCreation) {
+      await t
+        .click(this.newAccountSkip)
+        .click(this.tncNext)
+    }
   }
 
   async dismissDialogs (t: TestController) {
