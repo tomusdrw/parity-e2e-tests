@@ -2,8 +2,8 @@
 
 set -xe
 
+mkdir -p ./generated/screenshots
 echo "aaBBccDDeeFFggHH" > ./generated/authcodes
-mkdir -p generated/screenshots
 
 TESTCAFE=(
   ./node_modules/.bin/testcafe
